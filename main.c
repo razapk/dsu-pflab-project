@@ -4,6 +4,11 @@
 int main()
 {
     int option;
+    printf("Select an option:\n");
+    printf("1. List of products\n");
+    printf("2. Record a sale\n");
+    printf("3. View histroy\n");
+    scanf("%d", &option);
     printf("Select an option:\n1. List products\t\t2. Insert product\n");
     scanf("%d", &option);
     if (option == 1)
