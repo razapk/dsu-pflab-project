@@ -23,12 +23,26 @@ int main()
 
         if (option == 1)
         {
+            // read_products(ProductProduct**list)
         }
         else if (option == 2)
         {
         }
         else if (option == 3)
         {
+            int id, stock;
+            char name[100], manufacturer[100];
+            float price;
+            printf("Enter product id: ");
+            scanf("%d", &id);
+            printf("Enter product name: ");
+            scanf("%s", name);
+            printf("Enter product manufacturer: ");
+            scanf("%s", manufacturer);
+            printf("Enter product price: ");
+            scanf("%f", &price);
+            printf("Enter product stock: ");
+            scanf("%d", &stock);
         }
         else if (option == 3)
         {
