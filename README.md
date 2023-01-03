@@ -3,7 +3,7 @@
 - Muhammad Raza (CS221248)
 - Nasir Zaman Khan (CS221272)
 - Muhammad Rayyan Ayub (CS221247)
-- Umar Hayat (Write your role number yourself)
+- Umar Hayat (CS221233)
 
 ## Compilation
 You can compile this code using the following command.
