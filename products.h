@@ -6,5 +6,5 @@ typedef struct
     float price;
 } Product;
 
-int read_products(Product **list);
-int insert_product(Product product);
+int readProducts(Product **list);
+int insertProduct(Product product);

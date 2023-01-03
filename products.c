@@ -3,7 +3,7 @@
 
 const char *filename = "products.dat";
 
-int read_products(Product **list)
+int readProducts(Product **list)
 {
     int file_size;
     FILE *fp = fopen(filename, "rb");
@@ -26,7 +26,7 @@ int read_products(Product **list)
     return file_size / sizeof(Product);
 }
 
-int insert_product(Product product)
+int insertProduct(Product product)
 {
     FILE *fp = fopen(filename, "ab");
     if (!fp)
