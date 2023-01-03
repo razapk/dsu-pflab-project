@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <conio.h>
 #include "products.h"
 
 int main()
@@ -46,6 +47,20 @@ int main()
     }
     else if (option == 2)
     {
+        int id;
+        int quantity;
+        char c;
+        do
+        {
+            printf("**************************************************************\n");
+            printf("Enter product ID: ");
+            scanf("%d", &id);
+            printf("Enter product quantity: ");
+            scanf("%d", &quantity);
+            printf("Press N to add another item or any other key to create a bill.\n");
+            printf("**************************************************************\n");
+            c = _getch();
+        } while (c == 'N' || c == 'n');
     }
     else if (option == 3)
     {
