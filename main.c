@@ -81,7 +81,7 @@ int main()
             scanf("%s", item.manufacturer);
             printf("Enter product price: ");
             scanf("%f", &item.price);
-            printf("Enter product stock: ");
+            printf("Enter product stock: "); 
             scanf("%d", &item.stock);
             int ret = insertProduct(item);
             if (ret == 0)
@@ -95,6 +95,31 @@ int main()
         }
         else if (option == 4)
         {
+            int id, ret;
+            Product item;
+            printf("Product ID: ");
+            scanf("%d", &id);
+            char name[100], manufacturer[100];
+            float price;
+            printf("Enter product name: ");
+            scanf("%s", item.name);
+            printf("Enter product manufacturer: ");
+            scanf("%s", item.manufacturer);
+            printf("Enter product price: ");
+            scanf("%f", &item.price);
+            printf("Enter product stock: "); 
+            scanf("%d", &item.stock);
+            ret = editProduct(id, &item);
+            if (ret != 0)
+            {
+                printf("Please enter Product from list!");
+            }
+            else
+            {
+                printf("Product has been edited successfully!");
+            }
+
+
         }
         else if (option == 5)
         {
