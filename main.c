@@ -24,7 +24,27 @@ int main()
 
         if (option == 1)
         {
-            // read_products(ProductProduct**list)
+            Product *list;
+            int len, ret, i;
+            ret = readProducts(&list, &len);
+            if (ret != 0)
+            {
+                printf("Cannot read products file.");
+            }
+            else
+            {
+                for (i = 0; i < len; i++)
+                {
+                    printf("Id: %d\n", list[i].id);
+                    printf("Name: %s\n", list[i].name);
+                    printf("Manufacturer: %s\n", list[i].manufacturer);
+                    printf("Price: %f\n", list[i].price);
+                    printf("Stock: %d\n", list[i].stock);
+                    printf("***************************************************\n");
+                    printf("***************************************************\n");
+                }
+                free(list);
+            }
         }
         else if (option == 2)
         {
@@ -63,7 +83,7 @@ int main()
             printf("Enter product stock: ");
             scanf("%d", &item.stock);
             int ret = insertProduct(item);
-            if (ret== 0)
+            if (ret == 0)
             {
                 printf("Your product has been added successfully");
             }
