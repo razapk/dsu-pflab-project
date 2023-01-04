@@ -12,5 +12,6 @@ typedef struct
 } Sale;
 
 int recordSale(Sale details);
+int readSales(Sale **list, int *len);
 
 #endif

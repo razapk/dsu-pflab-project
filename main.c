@@ -119,7 +119,6 @@ int main()
                 scanf("%d", &item.stock);
                 printf("Product has been edited successfully!");
             }
-              
         }
         else if (option == 5)
         {
@@ -142,9 +141,7 @@ int main()
         details.numProducts = 0;
         printf("Enter customer's name: ");
         scanf("%s", details.customerName);
-        float totalInvoice=0;
-        details.totalBill;
-
+        float totalInvoice = 0;
 
         for (;;)
         {
@@ -166,22 +163,59 @@ int main()
                 continue;
             }
             item.stock -= quantity;
-            details.products[details.numProducts]=item.id;
-            details.productQuantities[details.numProducts]=quantity;
+            details.products[details.numProducts] = item.id;
+            details.productQuantities[details.numProducts] = quantity;
             details.numProducts++;
             updateProduct(item);
-            totalInvoice= totalInvoice+item.price*quantity;
+            totalInvoice = totalInvoice + item.price * quantity;
             printf("Press 'B' to create a bill and any other key to continue....\n");
             c = _getch();
             if (c == 'B' || c == 'b')
                 break;
             printf("**************************************************************\n");
         }
-        printf ("Your total bill is %f", totalInvoice);
-        
+        details.totalBill = totalInvoice;
+        printf("Your total bill is %f.\n", totalInvoice);
+        if (recordSale(details))
+        {
+            printf("An error occurred.\n");
+        }
     }
     else if (option == 3)
     {
+        Sale *list;
+        int len, i, c;
+        if (readSales(&list, &len))
+        {
+            printf("Error in reading sales file.\n");
+        }
+        else
+        {
+            for (i = 0; i < len; i++)
+            {
+                printf("***************************************************\n");
+                printf("***************************************************\n");
+                printf("Customer name: %s\n", list[i].customerName);
+                printf("...................................................\n");
+                for (c = 0; c < list[i].numProducts; c++)
+                {
+                    Product product;
+                    if (findProduct(list[i].products[c], &product))
+                    {
+                        printf("Error in reading product %d.", list[i].products[c]);
+                    }
+                    else
+                    {
+                        printProduct(product);
+                        printf("Quantity: %d\n", list[i].productQuantities[c]);
+                    }
+                    printf("...................................................\n");
+                }
+                printf("Total bill: %f\n", list[i].totalBill);
+            }
+            printf("***************************************************\n");
+            printf("***************************************************\n");
+        }
     }
     else
     {
