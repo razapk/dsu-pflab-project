@@ -31,22 +31,29 @@ int main()
         }
         else if (option == 3)
         {
+            Product item;
             int id, stock;
             char name[100], manufacturer[100];
             float price;
             printf("Enter product id: ");
-            scanf("%d", &id);
+            scanf("%d", &item.id);
             printf("Enter product name: ");
-            scanf("%s", name);
+            scanf("%s", item.name);
             printf("Enter product manufacturer: ");
-            scanf("%s", manufacturer);
+            scanf("%s", item.manufacturer);
             printf("Enter product price: ");
-            scanf("%f", &price);
+            scanf("%f", &item.price);
             printf("Enter product stock: ");
-            scanf("%d", &stock);
-        }
-        else if (option == 3)
-        {
+            scanf("%d", &item.stock);
+            int ret = insertProduct(item);
+            if (ret== 0)
+            {
+                printf("Your product has been added successfully");
+            }
+            else
+            {
+                printf("Please use a unique ID");
+            }
         }
         else if (option == 4)
         {
