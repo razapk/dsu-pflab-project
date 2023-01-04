@@ -117,7 +117,7 @@ int main()
                 scanf("%f", &item.price);
                 printf("Enter product stock: ");
                 scanf("%d", &item.stock);
-                printf("Product has been edited successfully!")
+                printf("Product has been edited successfully!");
             }
               
         }
@@ -142,6 +142,9 @@ int main()
         details.numProducts = 0;
         printf("Enter customer's name: ");
         scanf("%s", details.customerName);
+        float totalInvoice=0;
+        details.totalBill;
+
 
         for (;;)
         {
@@ -163,13 +166,19 @@ int main()
                 continue;
             }
             item.stock -= quantity;
+            details.products[details.numProducts]=item.id;
+            details.productQuantities[details.numProducts]=quantity;
+            details.numProducts++;
             updateProduct(item);
+            totalInvoice= totalInvoice+item.price*quantity;
             printf("Press 'B' to create a bill and any other key to continue....\n");
             c = _getch();
             if (c == 'B' || c == 'b')
                 break;
             printf("**************************************************************\n");
         }
+        printf ("Your total bill is %f", totalInvoice);
+        
     }
     else if (option == 3)
     {
