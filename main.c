@@ -81,7 +81,7 @@ int main()
             scanf("%s", item.manufacturer);
             printf("Enter product price: ");
             scanf("%f", &item.price);
-            printf("Enter product stock: "); 
+            printf("Enter product stock: ");
             scanf("%d", &item.stock);
             int ret = insertProduct(item);
             if (ret == 0)
@@ -99,16 +99,6 @@ int main()
             Product item;
             printf("Product ID: ");
             scanf("%d", &id);
-            char name[100], manufacturer[100];
-            float price;
-            printf("Enter product name: ");
-            scanf("%s", item.name);
-            printf("Enter product manufacturer: ");
-            scanf("%s", item.manufacturer);
-            printf("Enter product price: ");
-            scanf("%f", &item.price);
-            printf("Enter product stock: "); 
-            scanf("%d", &item.stock);
             ret = editProduct(id, &item);
             if (ret != 0)
             {
@@ -116,10 +106,19 @@ int main()
             }
             else
             {
-                printf("Product has been edited successfully!");
+                char name[100], manufacturer[100];
+                float price;
+                printf("Enter product name: ");
+                scanf("%s", item.name);
+                printf("Enter product manufacturer: ");
+                scanf("%s", item.manufacturer);
+                printf("Enter product price: ");
+                scanf("%f", &item.price);
+                printf("Enter product stock: ");
+                scanf("%d", &item.stock);
+                
             }
-
-
+              printf("Product has been edited successfully!");
         }
         else if (option == 5)
         {
@@ -143,7 +142,7 @@ int main()
         printf("Enter customer's name: ");
         scanf("%s", details.customerName);
 
-        for(;;)
+        for (;;)
         {
             printf("**************************************************************\n");
             printf("Enter product ID: ");
