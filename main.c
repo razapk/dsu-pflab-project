@@ -97,6 +97,10 @@ int main()
         }
         else if (option == 5)
         {
+            int id;
+            printf("Product ID: ");
+            scanf("%d", &id);
+            deleteProduct(id);
         }
         else
         {
