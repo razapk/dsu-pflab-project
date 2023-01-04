@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <conio.h>
 #include "products.h"
+#include "sales.h"
 
 int main()
 {
@@ -63,7 +64,7 @@ int main()
             printf("Enter product stock: ");
             scanf("%d", &item.stock);
             int ret = insertProduct(item);
-            if (ret== 0)
+            if (ret == 0)
             {
                 printf("Your product has been added successfully");
             }
@@ -85,20 +86,43 @@ int main()
     }
     else if (option == 2)
     {
-        int id;
-        int quantity;
-        char c;
-        do
+        int id, ret, quantity;
+        char c = '\0';
+        Sale details;
+        Product item;
+        details.numProducts = 0;
+        printf("Enter customer's name: ");
+        scanf("%s", details.customerName);
+
+        for(;;)
         {
             printf("**************************************************************\n");
             printf("Enter product ID: ");
             scanf("%d", &id);
+            ret = findProduct(id, &item);
+            if (ret != 0)
+            {
+                printf("The entered product does not exist.\n");
+                continue;
+            }
+            printf("Product name: %s\n", item.name);
+            printf("Product price: %f\n", item.price);
+            printf("Product availibilty in stock: %d\n", item.stock);
             printf("Enter product quantity: ");
             scanf("%d", &quantity);
-            printf("Press N to add another item or any other key to create a bill.\n");
-            printf("**************************************************************\n");
+            if (item.stock < quantity)
+            {
+                printf("Enough stock not available.\n");
+                continue;
+            }
+            item.stock -= quantity;
+            updateProduct(item);
+            printf("Press 'B' to create a bill and any other key to continue....\n");
             c = _getch();
-        } while (c == 'N' || c == 'n');
+            if (c == 'B' || c == 'b')
+                break;
+            printf("**************************************************************\n");
+        }
     }
     else if (option == 3)
     {
