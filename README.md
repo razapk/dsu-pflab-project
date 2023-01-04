@@ -8,7 +8,7 @@
 ## Compilation
 You can compile this code using the following command.
 ```
-tcc main.c products.c -o main.exe
+tcc main.c products.c sales.c -o main.exe
 ```
 Then you can run it using
 ```

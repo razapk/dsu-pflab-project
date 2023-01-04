@@ -3,6 +3,15 @@
 #include "products.h"
 #include "sales.h"
 
+void printProduct(Product item)
+{
+    printf("Id: %d\n", item.id);
+    printf("Name: %s\n", item.name);
+    printf("Manufacture: %s\n", item.manufacturer);
+    printf("Price: %f\n", item.price);
+    printf("Stock: %d\n", item.stock);
+}
+
 int main()
 {
     int option;
@@ -36,11 +45,7 @@ int main()
             {
                 for (i = 0; i < len; i++)
                 {
-                    printf("Id: %d\n", list[i].id);
-                    printf("Name: %s\n", list[i].name);
-                    printf("Manufacturer: %s\n", list[i].manufacturer);
-                    printf("Price: %f\n", list[i].price);
-                    printf("Stock: %d\n", list[i].stock);
+                    printProduct(list[i]);
                     printf("***************************************************\n");
                     printf("***************************************************\n");
                 }
@@ -60,11 +65,7 @@ int main()
             }
             else
             {
-                printf("Id: %d\n", item.id);
-                printf("Name: %s\n", item.name);
-                printf("Manufacture: %s\n", item.manufacturer);
-                printf("Pirce: %f\n", item.price);
-                printf("Stock: %d\n", item.stock);
+                printProduct(item);
             }
         }
         else if (option == 3)
@@ -99,7 +100,7 @@ int main()
             Product item;
             printf("Product ID: ");
             scanf("%d", &id);
-            ret = editProduct(id, &item);
+            ret = findProduct(id, &item);
             if (ret != 0)
             {
                 printf("Please enter Product from list!");
@@ -153,9 +154,7 @@ int main()
                 printf("The entered product does not exist.\n");
                 continue;
             }
-            printf("Product name: %s\n", item.name);
-            printf("Product price: %f\n", item.price);
-            printf("Product availibilty in stock: %d\n", item.stock);
+            printProduct(item);
             printf("Enter product quantity: ");
             scanf("%d", &quantity);
             if (item.stock < quantity)

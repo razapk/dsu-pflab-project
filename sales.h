@@ -1,3 +1,6 @@
+#ifndef __SALES_H__
+#define __SALES_H__
+
 typedef struct 
 {
     int time;
@@ -9,3 +12,5 @@ typedef struct
 } Sale;
 
 int recordSale(Sale details);
+
+#endif
