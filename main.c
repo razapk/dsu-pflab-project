@@ -117,9 +117,9 @@ int main()
                 scanf("%f", &item.price);
                 printf("Enter product stock: ");
                 scanf("%d", &item.stock);
-                
+                printf("Product has been edited successfully!")
             }
-              printf("Product has been edited successfully!");
+              
         }
         else if (option == 5)
         {
