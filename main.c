@@ -28,6 +28,23 @@ int main()
         }
         else if (option == 2)
         {
+            int id, ret;
+            Product item;
+            printf("Enter your ID: ");
+            scanf("%d", &id);
+            ret = findProduct(id, &item);
+            if (ret != 0)
+            {
+                printf("Product not found");
+            }
+            else
+            {
+                printf("Id: %d\n", item.id);
+                printf("Name: %s\n", item.name);
+                printf("Manufacture: %s\n", item.manufacturer);
+                printf("Pirce: %f\n", item.price);
+                printf("Stock: %d\n", item.stock);
+            }
         }
         else if (option == 3)
         {
