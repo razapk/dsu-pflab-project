@@ -14,22 +14,35 @@ void printProduct(Product item)
 
 int main()
 {
+printf(" _____ ___ ___ ____  _____  __  __  _____  _____  ____ 
+/  _  \\\\  |  //    \\/   __\\/  \\/  \\/  _  \\/  _  \\/    \\
+|  _  < |   | \\-  -/|   __||  \\/  ||  _  ||  _  <\\-  -/
+\\_____/ \\___/  |__| \\_____/\\__ \\__/\\__|__/\\__|\\_/ |__| 
+\n");
     int option;
 
-    printf("Select an option : \n");
-    printf("1: Manage products\n");
-    printf("2: Record sale\n");
-    printf("3: View sale history\n");
+printf("***********************************\n"); 
+printf("** WELCOME TO BYTEMART POS APP **\n"); 
+printf("***********************************\n"); 
+printf("             ELON GATES \n"); 
+printf("***********************************\n"); 
+printf("KINDLY ENTER YOUR CHOICE\n\n"); 
+printf("1-MANAGE PRODUCTS\n"); 
+printf("2-QUICK SALE\n"); 
+printf("3-VIEW SALE HISTORY\n");  
+printf("***********************************\n\n\n");
     scanf("%d", &option);
 
     if (option == 1)
     {
+        printf ("\t\t\t ***PRODUCT MANAGEMENT***\n\n");
         printf("Select an option : \n");
-        printf("1: List products\n");
-        printf("2: Find a product\n");
-        printf("3: Add product\n");
-        printf("4: Edit product\n");
-        printf("5: Delete product\n");
+        printf("1: LIST products\n");
+        printf("2: FIND a product\n");
+        printf("3: ADD a product\n");
+        printf("4: EDIT product details\n");
+        printf("5: DELETE a product\n\n");
+        printf("Option Number: ");
         scanf("%d", &option);
 
         if (option == 1)
@@ -43,12 +56,20 @@ int main()
             }
             else
             {
+                printf("---------------------------------------------INVENTORY DETAILS---------------------------------------------\n\n");
+                printf("================================================================================\n");
+                printf("ID\t\tNAME\t\tMANUFACTURER\tPRICE\t\t\tSTOCK\n\n");
                 for (i = 0; i < len; i++)
                 {
-                    printProduct(list[i]);
-                    printf("***************************************************\n");
-                    printf("***************************************************\n");
+                        printf("%d\t", list[i].id);
+                        printf("\t%s\t", list[i].name);
+                        printf("\t%s\t", list[i].manufacturer);
+                        printf("\tPKR %f\t", list[i].price);
+                        printf("\t%d\t\n", list[i].price);
+                    
+                    
                 }
+                printf("================================================================================\n");
                 free(list);
             }
         }
@@ -213,7 +234,6 @@ int main()
                 }
                 printf("Total bill: %f\n", list[i].totalBill);
             }
-            free(list);
             printf("***************************************************\n");
             printf("***************************************************\n");
         }
