@@ -64,7 +64,7 @@ int main()
                     printf("\t%s\t", list[i].name);
                     printf("\t%s\t", list[i].manufacturer);
                     printf("\tPKR %f\t", list[i].price);
-                    printf("\t%d\t\n", list[i].price);
+                    printf("\t%d\t\n", list[i].stock);
                 }
                 printf("================================================================================\n");
                 free(list);
@@ -135,6 +135,7 @@ int main()
                 scanf("%f", &item.price);
                 printf("Enter product stock: ");
                 scanf("%d", &item.stock);
+                updateProduct(item);
                 printf("Product has been edited successfully!");
             }
         }
